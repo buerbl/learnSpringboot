@@ -13,7 +13,7 @@ public class Demo2Application {
 		SpringApplication.run(Demo2Application.class, args);
 	}
 
-	@RequestMapping("/")
+	@RequestMapping
 	public String test(){
 		return "hello, springboot2!";
 	}

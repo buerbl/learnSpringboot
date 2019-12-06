@@ -1,5 +1,5 @@
 HELP.md
-target/
+/*/target/
 
 
 ### STS ###
@@ -17,6 +17,6 @@ target/
 *.iml
 
 ### 手动
-/mvnw
-/mvnw.cmd
-/.mvn/
+/*/mvnw
+/*/mvnw.cmd
+/*/.mvn/

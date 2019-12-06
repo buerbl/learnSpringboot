@@ -15,6 +15,6 @@ public class Demo2Application {
 
 	@RequestMapping
 	public String test(){
-		return "hello, springboot2!";
+		return "hello,springboot2!";
 	}
 }

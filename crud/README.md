@@ -164,6 +164,46 @@ public class CodeGenerator {
 }
 ```
 
+### 5 输出结果
+
+用postman模拟请求得到结果：
+
+```json
+[
+    {
+        "id": 1,
+        "name": "Jone",
+        "age": 18,
+        "email": "test1@baomidou.com"
+    },
+    {
+        "id": 2,
+        "name": "Jack",
+        "age": 20,
+        "email": "test2@baomidou.com"
+    },
+    {
+        "id": 3,
+        "name": "Tom",
+        "age": 28,
+        "email": "test3@baomidou.com"
+    },
+    {
+        "id": 4,
+        "name": "Sandy",
+        "age": 21,
+        "email": "test4@baomidou.com"
+    },
+    {
+        "id": 5,
+        "name": "Billie",
+        "age": 24,
+        "email": "test5@baomidou.com"
+    }
+]
+```
+
+
 ### 参考
 https://mp.baomidou.com/
 

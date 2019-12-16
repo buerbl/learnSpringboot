@@ -56,7 +56,7 @@ public class CodeGenerator {
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
         // 填写数据库名称
-        dsc.setUrl("jdbc:mysql://#:3306/dev?useUnicode=true&useSSL=false&characterEncoding=utf8");
+        dsc.setUrl("jdbc:mysql://47.105.202.146:3306/dev?useUnicode=true&useSSL=false&characterEncoding=utf8");
         // dsc.setSchemaName("public");
         dsc.setDriverName("com.mysql.jdbc.Driver");
         dsc.setUsername("root");
@@ -66,7 +66,7 @@ public class CodeGenerator {
         // 包配置
         PackageConfig pc = new PackageConfig();
         //包名
-        pc.setParent("com.example.lsbcrudplus");
+        pc.setParent("com.example.lsbdigui");
         mpg.setPackageInfo(pc);
 
         // 自定义配置

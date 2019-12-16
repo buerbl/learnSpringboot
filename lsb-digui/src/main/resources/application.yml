@@ -1,0 +1,11 @@
+logging:
+  level:
+    com:
+      example:
+        lsbdigui:
+          mapper: debug
+spring:
+  datasource:
+    url: jdbc:mysql://47.105.202.146:3306/dev
+    username: root
+    password: 123456

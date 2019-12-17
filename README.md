@@ -3,3 +3,5 @@
 - [实现增删改查](/lsb-crub)
 
 - [做一个优雅的CRUD-BOY](/lsb-crub-plus)
+
+- [MySQL 递归查询](/lsb-digui)

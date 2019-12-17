@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.lsbdigui.mapper.DiguiMapper">
+    <resultMap id="RecursiveMap" type="com.example.lsbdigui.entity.Digui">
+        <result property="id" column="id"/>
+        <result property="msg" column="msg"/>
+        <result property="parentid" column="parentid"/>
+        <collection property="diguiList" ofType="com.example.lsbdigui.entity.Digui"
+                    select="com.example.lsbdigui.mapper.DiguiMapper.getAllBySQL"
+                    column="id"/>
+    </resultMap>
+    <select id="getAllBySQL" resultMap="RecursiveMap">
+        select *
+        from digui
+        where parentid = #{parent}
+    </select>
+</mapper>

@@ -26,5 +26,10 @@ public class DiguiController {
     public Result getAll(){
         return Result.getResult(diguiService.getAll(0));
     }
+
+    @RequestMapping("/getAllBySQL")
+    public Result getAllBySQL(){
+        return Result.getResult(diguiService.getAllBySQL(0));
+    }
 }
 

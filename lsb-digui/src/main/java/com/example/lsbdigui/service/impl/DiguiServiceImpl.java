@@ -25,7 +25,7 @@ import java.util.List;
 public class DiguiServiceImpl extends ServiceImpl<DiguiMapper, Digui> implements IDiguiService {
 
 
-    //递归查询
+    //应用层递归查询
     @Override
     public List<Digui> getAll(int parent) {
         List<Digui> deptVosList=new ArrayList<>();
@@ -41,5 +41,11 @@ public class DiguiServiceImpl extends ServiceImpl<DiguiMapper, Digui> implements
             deptVosList.add(digui1);
         }
         return deptVosList;
+
+    }
+
+    @Override
+    public List<Digui> getAllBySQL(int parent) {
+        return baseMapper.getAllBySQL(parent);
     }
 }

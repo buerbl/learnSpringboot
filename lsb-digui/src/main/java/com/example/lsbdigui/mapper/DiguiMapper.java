@@ -2,6 +2,10 @@ package com.example.lsbdigui.mapper;
 
 import com.example.lsbdigui.entity.Digui;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +17,5 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface DiguiMapper extends BaseMapper<Digui> {
 
+    List<Digui> getAllBySQL(@Param("parent")int parent);
 }

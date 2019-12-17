@@ -17,8 +17,17 @@ import java.util.List;
 public interface IDiguiService extends IService<Digui> {
 
     /**
-     * 按照顺序返回所有的内容
+     * 应用层按照顺序返回所有的内容
      * @return
      */
     List<Digui> getAll(int parent);
+
+
+    /**
+     * SQL层按照顺序返回所有的内容
+     * @return
+     */
+    List<Digui> getAllBySQL(int parent);
+
+
 }

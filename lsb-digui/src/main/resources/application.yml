@@ -6,6 +6,6 @@ logging:
           mapper: debug
 spring:
   datasource:
-    url: jdbc:mysql://47.105.202.146:3306/dev
+    url: jdbc:mysql://数据库:3306/dev
     username: root
     password: 123456

@@ -34,6 +34,53 @@ INSERT into `digui`(msg, parentid) VALUES('C', 2);
 2. 应用层代码递归
 3. MyBatis 的 collection 标签
 
+### 方案1 应用层代码递归
+
+```JAVA
+//应用层递归查询
+@Override
+public List<Digui> getAll(int parent) {
+    List<Digui> deptVosList=new ArrayList<>();
+    QueryWrapper queryWrapper = new QueryWrapper();
+    queryWrapper.eq("parentid", parent);
+    List<Digui> list1 = list(queryWrapper);
+    for (Digui digui: list1) {
+        Digui digui1 = new Digui();
+        digui1.setId(digui.getId());
+        digui1.setMsg(digui.getMsg());
+        digui1.setParentid(digui.getParentid());
+        // 此处递归调用赋值
+        digui1.setDiguiList(getAll(digui.getId()));
+        deptVosList.add(digui1);
+    }
+    return deptVosList;
+
+}
+```
+
+
+### 方案2 MyBatis 的 collection 标签
+
+```xml
+ <resultMap id="RecursiveMap" type="com.example.lsbdigui.entity.Digui">
+        <result property="id" column="id"/>
+        <result property="msg" column="msg"/>
+        <result property="parentid" column="parentid"/>
+        <collection property="diguiList" ofType="com.example.lsbdigui.entity.Digui"
+                    select="com.example.lsbdigui.mapper.DiguiMapper.getAllBySQL"
+                    column="id"/>
+</resultMap>
+<select id="getAllBySQL" resultMap="RecursiveMap">
+    select *
+    from digui
+    where parentid = #{parent}
+</select>
+```
+
+
+使用```<collection>``` 、```<select>```标签实现 sql 递归查询。
+
+
 
 ### 结果
 
@@ -72,6 +119,14 @@ INSERT into `digui`(msg, parentid) VALUES('C', 2);
     ]
 }
 ```
+
+### 对比
+
+![](http://javahouse.xyz/20191217141903.png)
+
+### 建议
+
+应用层可以一次查询全部数据，然后再递归找出需要的数据，这样可以减少数据库查询，性能更佳。
 
 ### 参考  
 - https://blog.rxliuli.com/p/5830226b/

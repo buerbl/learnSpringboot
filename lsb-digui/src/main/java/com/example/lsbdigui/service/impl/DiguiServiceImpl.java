@@ -44,6 +44,7 @@ public class DiguiServiceImpl extends ServiceImpl<DiguiMapper, Digui> implements
 
     }
 
+    //SQL层递归查询
     @Override
     public List<Digui> getAllBySQL(int parent) {
         return baseMapper.getAllBySQL(parent);

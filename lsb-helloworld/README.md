@@ -1,4 +1,4 @@
-### 核心代码
+## 1 核心代码
 
 ```java
 @SpringBootApplication
@@ -16,6 +16,5 @@ public class Demo2Application {
 }
 ```
 
-
-### 输出
+## 2 输出
 输出  hello, springboot2!

@@ -1,4 +1,8 @@
-## 1 核心代码
+## 引入
+
+用 SpringBoot 写出第一行代码
+
+##  核心代码
 
 ```java
 @SpringBootApplication
@@ -16,5 +20,5 @@ public class Demo2Application {
 }
 ```
 
-## 2 输出
+##  输出
 输出  hello, springboot2!

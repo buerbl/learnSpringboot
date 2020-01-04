@@ -1,7 +1,9 @@
-# 实现增删改查
+# 引入
+
+使用 MyBatis-Plus 以及 thymeleaf 实现增删查改
 
 
-## 1 引入 Mybatis-Plus
+##  引入 Mybatis-Plus
 
 MyBatis-Plus（简称 MP）是一个 MyBatis 的增强工具，在 MyBatis 的基础上只做增强不做改变，为简化开发、提高效率而生。
 
@@ -15,7 +17,7 @@ MyBatis-Plus（简称 MP）是一个 MyBatis 的增强工具，在 MyBatis 的�
 </dependency>
 ```
 
-## 2 引入 Lombok
+## 引入 Lombok
 
 Lombok 可以通过注解简化代码，他会在编译的时候自动生成代码，我们在源代码是看不到他的。
 
@@ -34,7 +36,7 @@ Lombok 可以通过注解简化代码，他会在编译的时候自动生成代�
 </dependency>
 ```
 
-## 3 造一些数据
+##  造一些数据
 
 ```sql
 DROP TABLE IF EXISTS user;
@@ -59,7 +61,7 @@ INSERT INTO user (id, name, age, email) VALUES
 
 ```
 
-## 4 逆向生成代码
+##  逆向生成代码
 
 通过代码将sql语句变成项目的基础代码。基础代码有实体类、控制层代码、服务层代码等等，减少机械操作。
 
@@ -164,7 +166,7 @@ public class CodeGenerator {
 }
 ```
 
-## 5 输出结果
+##  输出结果
 
 用postman模拟请求得到结果：
 

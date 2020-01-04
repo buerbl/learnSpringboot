@@ -40,5 +40,11 @@ public class User implements Serializable {
      */
     private String email;
 
+    public User(long id, String name, int age){
+        this.id = id;
+        this.name  =name;
+        this.age = age;
+    }
+
 
 }

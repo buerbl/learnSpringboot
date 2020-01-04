@@ -15,7 +15,7 @@ public class CrudApplication {
         SpringApplication.run(CrudApplication.class, args);
     }
 
-    @RequestMapping("/crud")
+    @RequestMapping("/lsb_crub")
     public String test(){
         return "hello,crud";
     }

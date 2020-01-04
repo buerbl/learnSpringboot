@@ -3,6 +3,7 @@ package com.example.lsbcrudplus.controller;
 
 import com.example.lsbcrudplus.service.IUserService;
 import com.example.lsbcrudplus.util.Result;
+import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author jobob
  * @since 2019-12-09
  */
+@Log
 @RestController
 @RequestMapping("/lsbcrud/user")
 public class UserController {
@@ -24,6 +26,8 @@ public class UserController {
 
     @RequestMapping("/getList")
     public Result getList(){
+        int a = 1/0;
+
         return Result.getResult(userService.list());
     }
 

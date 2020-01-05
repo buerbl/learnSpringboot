@@ -1,8 +1,9 @@
 spring:
   datasource:
-    url: jdbc:mysql://ip/dev
+    url: jdbc:mysql://47.105.202.146/dev
     username: root
     password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
   thymeleaf:
     cache: false
     prefix: classpath:/templates/
@@ -12,3 +13,6 @@ spring:
     servlet:
       content-type: text/html
     mode: HTML5
+logging:
+  level:
+    com.example.crud.mapper: trace # 改成你的mapper文件所在包路径

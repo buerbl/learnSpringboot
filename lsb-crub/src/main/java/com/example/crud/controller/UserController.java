@@ -1,17 +1,17 @@
 package com.example.crud.controller;
 
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.crud.entity.User;
 import com.example.crud.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,21 +28,39 @@ import java.util.List;
 public class UserController {
     @Autowired
     private IUserService userService;
-    @ResponseBody
-    @RequestMapping("/getAll")
-    public List<User> getAll(){
-        return userService.list();
+
+    @RequestMapping("/update")
+    public String update(User user){
+        userService.updateById(user);
+        return "redirect:list";
     }
 
-    @RequestMapping("/hello")
-    public String hello(HttpServletRequest request, @RequestParam(value = "name", required = false, defaultValue = "springboot-thymeleaf") String name) {
-        List<User> empList = new ArrayList<>();
-        empList.add(new User(1, "校长", 24));
-        empList.add(new User(2, "书记", 28));
-        empList.add(new User(3, "小海", 25));
-        request.setAttribute("userList", empList);
-        request.setAttribute("name", name);
-        return "hello";
+    @RequestMapping("/edit")
+    public String edit(Model model, Integer id){
+        User user = userService.getById(id);
+        model.addAttribute("user", user);
+        return "edit";
+    }
+
+    @RequestMapping("/delect")
+    public String delect(Integer id){
+        userService.removeById(id);
+        return "redirect:list";
+    }
+
+    @RequestMapping("/add")
+    public String add(@ModelAttribute User user){
+        userService.save(user);
+        return "redirect:list";
+    }
+
+    @RequestMapping("/list")
+    public String hello(Model model, @RequestParam(value = "current", required = false, defaultValue = "1") long current) {
+        Page<User> curPage = new Page<>();
+        curPage.setCurrent(current); // 当前页
+        Page<User> page = userService.page(curPage);
+        model.addAttribute("page", page);
+        return "list";
     }
 }
 

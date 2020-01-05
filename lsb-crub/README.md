@@ -1,13 +1,26 @@
-# 引入
+## 1 引入
 
 使用 MyBatis-Plus 以及 thymeleaf 实现增删查改
 
 
-##   Mybatis-Plus
+##  2 Mybatis-Plus
 
 MyBatis-Plus（简称 MP）是一个 MyBatis 的增强工具，在 MyBatis 的基础上只做增强不做改变，为简化开发、提高效率而生。
 
-### maven 引入
+##  3 thymeleaf
+
+一个模板语言，为后端 Springboot  的开发而生。
+
+## 4 Lombok
+
+Lombok 可以通过注解简化代码，他会在编译的时候自动生成代码，我们在源代码是看不到他的。需要引入 maven 依赖以及安装插件。
+
+### 4.1 用途：
+- @Date注解生成getter方法、setter方法、无参构造器、重写equal方法、hashcode方法。一般应用这个注解即可。
+- @NoArgsConstructor 生成无参构造器
+- @AllArgsConstructor 生成包含所有参数的构造器
+
+## 5 maven 引入
 
 ```java
 <dependency>
@@ -15,20 +28,10 @@ MyBatis-Plus（简称 MP）是一个 MyBatis 的增强工具，在 MyBatis 的�
     <artifactId>mybatis-plus-boot-starter</artifactId>
     <version>3.3.0</version>
 </dependency>
-```
-
-##  Lombok
-
-Lombok 可以通过注解简化代码，他会在编译的时候自动生成代码，我们在源代码是看不到他的。
-
-
-
-### 用途：
-1. 通过@Date注解生成getter方法、setter方法、无参构造器、重写equal方法、hashcode方法。
-
-### maven 引入
-
-```java
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-thymeleaf</artifactId>
+</dependency>
 <dependency>
     <groupId>org.projectlombok</groupId>
     <artifactId>lombok</artifactId>
@@ -36,34 +39,51 @@ Lombok 可以通过注解简化代码，他会在编译的时候自动生成代�
 </dependency>
 ```
 
-##  造一些数据
+##  6 造一些数据
 
 ```sql
-DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+  `name` varchar(30) DEFAULT NULL COMMENT '姓名',
+  `age` int(11) DEFAULT NULL COMMENT '年龄',
+  `email` varchar(50) DEFAULT NULL COMMENT '邮箱',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE user
-(
-	id BIGINT(20) NOT NULL COMMENT '主键ID',
-	name VARCHAR(30) NULL DEFAULT NULL COMMENT '姓名',
-	age INT(11) NULL DEFAULT NULL COMMENT '年龄',
-	email VARCHAR(50) NULL DEFAULT NULL COMMENT '邮箱',
-	PRIMARY KEY (id)
-);
-
-DELETE FROM user;
-
-INSERT INTO user (id, name, age, email) VALUES
-(1, 'Jone', 18, 'test1@baomidou.com'),
-(2, 'Jack', 20, 'test2@baomidou.com'),
-(3, 'Tom', 28, 'test3@baomidou.com'),
-(4, 'Sandy', 21, 'test4@baomidou.com'),
-(5, 'Billie', 24, 'test5@baomidou.com');
-
+INSERT INTO `user` VALUES ('1', 'Jone', '18', 'test1@baomidou.com');
+INSERT INTO `user` VALUES ('2', 'Jack', '20', 'test2@baomidou.com');
+INSERT INTO `user` VALUES ('3', 'Tom', '28', 'test3@baomidou.com');
+INSERT INTO `user` VALUES ('4', 'Sandy', '21', 'test4@baomidou.com');
+INSERT INTO `user` VALUES ('5', 'w', '12', '8377@qq.com');
+INSERT INTO `user` VALUES ('6', 'booleanbl', '12', '837@qq.com');
+INSERT INTO `user` VALUES ('7', 'wenda', '12', '8377@qq.com');
+INSERT INTO `user` VALUES ('8', 'booleanbl', '12', '83774@qq.com');
+INSERT INTO `user` VALUES ('9', 'booleanbl', '12', '8377@qq.com');
+INSERT INTO `user` VALUES ('10', '布尔bl', '12', '1831@163.com');
+INSERT INTO `user` VALUES ('11', '布尔bl', '12', 'du@qq.com');
+INSERT INTO `user` VALUES ('12', '布尔bl', '22', '8@qq.com');
 ```
 
-##  生成代码
+## 7 项目结构
 
-通过代码将sql语句变成项目的基础代码。基础代码有实体类、控制层代码、服务层代码等等，减少机械操作。
+```java
+├─java
+│  └─com
+│      └─example
+│          └─crud
+│              ├─controller
+│              ├─entity
+│              ├─mapper
+│              ├─service
+│              │  └─impl
+│              └─util
+└─resources
+    └─templates
+```
+##  8 生成代码
+
+通过代码将sql语句变成项目的基础代码。基础代码有实体类、控制层代码、服务层代码等等，减少机械操作。实现代码后我们只需要输入表明即可生成需要代码。
 
 ```java
 public class CodeGenerator {
@@ -165,45 +185,187 @@ public class CodeGenerator {
 
 }
 ```
+## 9 application.yml
 
-##  输出
+编写 application.yml 文件，实现数据库连接以及 一些 thymeleaf 的必要配置。 
 
-用postman模拟请求得到结果：
+```java
+spring:
+  datasource:
+    url: jdbc:mysql://IP/数据库名
+    username: 用户名
+    password: 密码
+    driver-class-name: com.mysql.jdbc.Driver
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    check-template-location: true
+    suffix: .html
+    encoding: utf-8
+    servlet:
+      content-type: text/html
+    mode: HTML5
+logging:
+  level:
+    com.example.crud.mapper: trace # 改成你的mapper文件所在包路径
+```
+## 10 主要后端代码
 
-```json
-[
-    {
-        "id": 1,
-        "name": "Jone",
-        "age": 18,
-        "email": "test1@baomidou.com"
-    },
-    {
-        "id": 2,
-        "name": "Jack",
-        "age": 20,
-        "email": "test2@baomidou.com"
-    },
-    {
-        "id": 3,
-        "name": "Tom",
-        "age": 28,
-        "email": "test3@baomidou.com"
-    },
-    {
-        "id": 4,
-        "name": "Sandy",
-        "age": 21,
-        "email": "test4@baomidou.com"
-    },
-    {
-        "id": 5,
-        "name": "Billie",
-        "age": 24,
-        "email": "test5@baomidou.com"
+我们使用 mybatis-plus 不需要编写 xml 就可以快速实现单表查询。所以省略很多代码。其中的分页代码可以在运行时自动加载，不需要我们编写分页代码，这点给 mybatis-plus 点赞。
+
+```java
+package com.example.crud.controller;
+
+
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.example.crud.entity.User;
+import com.example.crud.service.IUserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * <p>
+ *  前端控制器
+ * </p>
+ *
+ * @author jobob
+ * @since 2019-12-06
+ */
+@Controller
+@RequestMapping("/crud/user")
+public class UserController {
+    @Autowired
+    private IUserService userService;
+
+    @RequestMapping("/update")
+    public String update(User user){
+        userService.updateById(user);
+        return "redirect:list";
     }
-]
+
+    @RequestMapping("/edit")
+    public String edit(Model model, Integer id){
+        User user = userService.getById(id);
+        model.addAttribute("user", user);
+        return "edit";
+    }
+
+    @RequestMapping("/delect")
+    public String delect(Integer id){
+        userService.removeById(id);
+        return "redirect:list";
+    }
+
+    @RequestMapping("/add")
+    public String add(@ModelAttribute User user){
+        userService.save(user);
+        return "redirect:list";
+    }
+
+    @RequestMapping("/list")
+    public String hello(Model model, @RequestParam(value = "current", required = false, defaultValue = "1") long current) {
+        Page<User> curPage = new Page<>();
+        curPage.setCurrent(current); // 当前页
+        Page<User> page = userService.page(curPage);
+        model.addAttribute("page", page);
+        return "list";
+    }
+}
 ```
 
+## 11 主要前端代码
+
+我们利用 thymeleaf 编写前端代码，可以快速解决数据前后端数据传输问题。
+
+### 11.1 list.html
+
+```html
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<div style="width:500px;margin:20px auto;text-align: center">
+    <table align='center' border='1' cellspacing='0'>
+        <tr>
+            <td>id</td>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>邮箱</td>
+            <td>编辑</td>
+            <td>删除</td>
+        </tr>
+        <tr th:each="c:${page.records}">
+            <td th:text="${c.id}"></td>
+            <td th:text="${c.name}"></td>
+            <td th:text="${c.age}"></td>
+            <td th:text="${c.email}"></td>
+            <td><a th:href="@{/crud/user/edit(id=${c.id})}">编辑</a></td>
+            <td><a th:href="@{/crud/user/delect(id=${c.id})}">删除</a></td>
+        </tr>
+    </table>
+    <br/>
+    <div>
+        <a th:href="@{/crud/user/list(current=1)}">[首  页]</a>
+        <a th:href="@{/crud/user/list(current=${page.current-1})}">[上一页]</a>
+        <a th:href="@{/crud/user/list(current=${page.current+1})}">[下一页]</a>
+    </div>
+    <br/>
+    <form action="add" method="post">
+        姓名: <input name="name"/> <br/>
+        年龄: <input name="age"/> <br/>
+        邮箱: <input name="email"/> <br/>
+        <button type="submit">提交</button>
+
+    </form>
+</div>
+
+</body>
+</html>
+```
+
+### 11.2 edit.html
+
+```html
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div style="margin:0px auto; width:500px">
+
+    <form action="update" method="post">
+
+        姓名: <input name="name" th:value="${user.name}"/> <br/>
+        年龄: <input name="age" th:value="${user.age}"/> <br/>
+        邮箱: <input name="email" th:value="${user.email}"/> <br/>
+
+        <input name="id" type="hidden" th:value="${user.id}"/>
+        <button type="submit">提交</button>
+
+    </form>
+</div>
+</body>
+
+</html>
+```
+
+## 12  编码完成
+
+## 13 效果
 
 
+![](http://javahouse.xyz/20200106014418.png)

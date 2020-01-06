@@ -1,7 +1,9 @@
 package com.example.lsbmq;
 
+import com.example.lsbmq.rabbit.Sender;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -13,4 +15,10 @@ public class LsbMqApplicationTests {
     public void contextLoads() {
     }
 
+    @Autowired
+    private Sender sender;
+    @Test
+    public void hello() throws Exception {
+        sender.send();
+    }
 }

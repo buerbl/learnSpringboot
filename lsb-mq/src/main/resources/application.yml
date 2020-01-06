@@ -1,0 +1,8 @@
+spring:
+  rabbitmq:
+    host: 47.105.202.146
+    port: 5672
+    username: admin
+    password: 123456
+  application:
+    name: lsb-mq

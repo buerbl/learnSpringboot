@@ -1,0 +1,7 @@
+### redis 缓存配置
+spring:
+  redis:
+    database: 0
+    host: 47.105.202.146
+    port: 6379
+    password: 123456

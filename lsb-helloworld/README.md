@@ -1,6 +1,6 @@
 ## 引入
 
-用 SpringBoot 写出第一行代码
+用 SpringBoot （2.1.10.RELEASE） 写出第一行代码
 
 ##  核心代码
 

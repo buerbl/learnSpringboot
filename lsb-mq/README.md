@@ -1,1 +1,1 @@
-# SpringBoot基础架构篇4
+# SpringBoot基础架构篇4（RabbitMQ）

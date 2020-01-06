@@ -399,9 +399,8 @@ public class Config {
 </html>
 ```
 
-## 12  编码完成
 
-## 13 效果
+## 12 效果
 
 
 ![](http://javahouse.xyz/20200106014418.png)

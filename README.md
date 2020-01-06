@@ -11,6 +11,10 @@
 
 - [lsb-SpringBoot基础架构篇3（SpringBoot与Redis）](/lsb-redistest)
 
+- [lsb-SpringBoot基础架构篇4（SpringBoot与）]()
+
+- [lsb-SpringBoot基础架构篇5（SpringBoot与）]()
+
 
 ## 应用实战篇
 

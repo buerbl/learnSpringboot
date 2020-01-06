@@ -5,9 +5,9 @@
 
 - [lsb-第一行代码（SpringBoot）](/lsb-helloworld)
 
-- [lsb-实现增删改查（SpringBoot、MyBatis-Plus与Thymeleaf）](/lsb-crub)
+- [lsb-SpringBoot基础架构篇1（SpringBoot、MyBatis-Plus与Thymeleaf）](/lsb-crub)
 
-- [lsb-做一个优雅的CRUD-BOY（SpringBoot与MyBatis-Plus）](/lsb-crub-plus)
+- [lsb-SpringBoot基础架构篇2（SpringBoot与MyBatis-Plus）](/lsb-crub-plus)
 
 
 ## 应用实战篇

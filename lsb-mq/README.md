@@ -1,4 +1,4 @@
-# SpringBoot基础架构篇4（RabbitMQ）
+# SpringBoot基础架构篇4（SpringBoot与 RabbitMQ）
 
 ## 应用场景
 

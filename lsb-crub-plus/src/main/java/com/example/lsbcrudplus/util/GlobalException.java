@@ -3,6 +3,7 @@ package com.example.lsbcrudplus.util;
 import com.example.lsbcrudplus.emum.ResultEnum;
 import com.example.lsbcrudplus.util.Result;
 import lombok.extern.java.Log;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
@@ -13,7 +14,7 @@ import java.lang.invoke.LambdaConversionException;
  * @Author: boolean
  * @Date: 2019/12/10 0:14
  */
-@Log
+@Slf4j
 @RestControllerAdvice
 public class GlobalException {
 
@@ -24,7 +25,7 @@ public class GlobalException {
         result.setCode(ResultEnum.ERROR.getCode());
         result.setMsg(ResultEnum.ERROR.getMsg());
         result.setDate(e.getMessage());
-        log.info(e.getMessage());
+        log.error("报错了",e);
         return result;
     }
 

@@ -1,6 +1,6 @@
 ## 1 引入
 
-使用 MyBatis-Plus 以及 thymeleaf 实现增删查改
+使用 MyBatis-Plus 以及 thymeleaf 实现增删查改。效果图在最后。
 
 
 ##  2 Mybatis-Plus
@@ -19,6 +19,9 @@ Lombok 可以通过注解简化代码，他会在编译的时候自动生成代�
 - @Date注解生成getter方法、setter方法、无参构造器、重写equal方法、hashcode方法。一般应用这个注解即可。
 - @NoArgsConstructor 生成无参构造器
 - @AllArgsConstructor 生成包含所有参数的构造器
+- @Sj4j 可以用来打印日志
+ 
+以上都是类注解。
 
 ## 5 maven 引入
 
@@ -213,6 +216,7 @@ logging:
 
 我们使用 mybatis-plus 不需要编写 xml 就可以快速实现单表查询。所以省略很多代码。其中的分页代码可以在运行时自动加载，不需要我们编写分页代码，这点给 mybatis-plus 点赞。
 
+### 10.1  控制代码
 ```java
 package com.example.crud.controller;
 
@@ -277,6 +281,38 @@ public class UserController {
         Page<User> page = userService.page(curPage);
         model.addAttribute("page", page);
         return "list";
+    }
+}
+```
+
+### 10.2  分页配置代码
+
+如果我们需要使用 ，mybatisplus 分页插件，需要手动配置。
+
+```java
+package com.example.crud.util;
+
+import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+/**
+ * @Description: 配置 mybatisplus 的分页
+ * @Author: boolean
+ * @Date: 2020/1/6 0:07
+ */
+@EnableTransactionManagement
+@Configuration
+public class Config {
+    @Bean
+    public PaginationInterceptor paginationInterceptor() {
+        PaginationInterceptor paginationInterceptor = new PaginationInterceptor();
+        // 设置请求的页面大于最大页后操作， true调回到首页，false 继续请求  默认false
+        // paginationInterceptor.setOverflow(false);
+        // 设置最大单页限制数量，默认 500 条，-1 不受限制
+        // paginationInterceptor.setLimit(500);
+        return paginationInterceptor;
     }
 }
 ```

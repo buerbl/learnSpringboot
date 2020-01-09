@@ -1,5 +1,3 @@
-# SpringBoot基础架构篇3（SpringBoot与Redis）
-
 
 >show me the code and talk to me,做的出来更要说的明白  
 >我是布尔bl，你的支持是我分享的动力！

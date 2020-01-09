@@ -9,7 +9,7 @@
 
 - [lsb-SpringBoot基础架构篇2（SpringBoot与MyBatis-Plus）](/lsb-crub-plus)
 
-- [lsb-SpringBoot基础架构篇3（SpringBoot与Redis）](/lsb-redistest)
+- [lsb-SpringBoot基础架构篇3（Redis）](/lsb-redistest)
 
 - [lsb-SpringBoot基础架构篇4（SpringBoot与 RabbitMQ）](/lsb-mq)
 

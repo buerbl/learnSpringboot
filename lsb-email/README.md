@@ -81,6 +81,7 @@ public class LsbEmailApplication {
 }
 
 ```
+
 ### 4 关注微信公众号，随时移动端阅读
 
 ![](http://javahouse.xyz/20200106104817.png)

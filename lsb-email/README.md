@@ -6,14 +6,24 @@
 
 简单送送邮件
 
-## maven
+# 2 结构
+```java
+├─java
+│  └─com
+│      └─example
+│          └─lsbemail
+└─resources
+    ├─static
+    └─templates
+```
+## 3 maven
 ```java
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-mail</artifactId>
 </dependency>
 ```
-## 2 配置
+## 4 配置
 
 ```java
 ## 邮箱服务器地址
@@ -29,7 +39,7 @@ mail.sender=18319748706@163.com
 mail.receiver=18319748706@163.com
 ```
 
-## 3 发送
+## 5 发送
 
 ```java
 package com.example.lsbemail;
@@ -82,6 +92,6 @@ public class LsbEmailApplication {
 
 ```
 
-### 4 关注微信公众号，随时移动端阅读
+### 6 关注微信公众号，随时移动端阅读
 
 ![](http://javahouse.xyz/20200106104817.png)

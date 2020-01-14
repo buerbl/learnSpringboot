@@ -21,4 +21,6 @@
 
 - [lsb-MySQL 递归查询](/lsb-digui)
 
+- [lsb-邮件发送](/lsb-email)
+
 

@@ -92,6 +92,10 @@ public class LsbEmailApplication {
 
 ```
 
-### 6 关注微信公众号，随时移动端阅读
+### 6 启动
+
+ jar方式启动，直接点击启动类 mian() 方法启动
+
+### 7 关注微信公众号，随时移动端阅读
 
 ![](http://javahouse.xyz/20200106104817.png)

@@ -114,6 +114,8 @@ public class MyUserController {
 ### 5 启动
 
  jar方式启动，直接点击启动类 mian() 方法启动
+ 
+ 打开 http://localhost:8080/druid 内置页面即可查阅
 
 ###  6 关注微信公众号，随时移动端阅读
 

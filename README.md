@@ -25,4 +25,6 @@
 
 - [lsb-邮件发送](/lsb-email)
 
+- [lsb-切面结合注解](/lsb-aop)
+
 

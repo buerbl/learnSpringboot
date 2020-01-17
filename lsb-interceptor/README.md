@@ -3,20 +3,20 @@
 
 
 
+## 引入
 
-##  maven
-```java
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-aop</artifactId>
-</dependency>
-```
+拦截器可以在请求控制层之前做一些特定操作
 
+## 操作
 
-###  启动
+1. 继承 HandlerInterceptor，
+2. 继承 WebMvcConfigurer 放到Springboot 容器
+ 
 
- 运行 learnSpringboot\lsb-aop\src\test\java\com\example\lsbaop\LsbAopApplicationTests.java
+##  启动
 
-###  关注微信公众号，随时移动端阅读
+jar 启动，点击main（）
+
+#  关注微信公众号，随时移动端阅读
 
 ![](http://javahouse.xyz/20200106104817.png)

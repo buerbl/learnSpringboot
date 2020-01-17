@@ -17,6 +17,8 @@
 
 - [lsb-SpringBoot基础架构篇6（Druid的监控）](/lsb-druid)
 
+- [lsb-SpringBoot基础架构篇7（security鉴权）](/lsb-security)
+
 
 ## 应用实战篇
 

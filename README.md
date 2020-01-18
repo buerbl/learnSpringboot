@@ -31,4 +31,7 @@
 
 - [lsb-拦截器使用](/lsb-interceptor)
 
+- [lsb-restful接口的修养](/lsb-restful)
+
+
 

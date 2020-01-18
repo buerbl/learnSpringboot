@@ -31,7 +31,7 @@
 
 - [lsb-拦截器使用](/lsb-interceptor)
 
-- [lsb-restful接口的修养](/lsb-restful)
+- [lsb-如何设计一个优雅的RESTFUL的接口](/lsb-restful)
 
 
 

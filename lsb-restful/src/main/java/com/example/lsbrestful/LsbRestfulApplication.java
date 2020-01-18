@@ -17,24 +17,51 @@ public class LsbRestfulApplication {
         SpringApplication.run(LsbRestfulApplication.class, args);
     }
 
+    /**
+     * 得到所有列表
+     * @return
+     */
     @RequestMapping(value = "/v1/list",method = RequestMethod.GET)
     public String getList(){
         log.info("得到列表");
         return "得到列表";
     }
 
+    /**
+     * 得到列表中的一条
+     * @param name
+     * @return
+     */
     @RequestMapping(value = "/v1/list/{name}",method = RequestMethod.GET)
     public String getListone(@PathVariable("name") String name){
         log.info("得到列表"+name);
         return "得到列表"+name;
     }
 
+    /**
+     * 往列表中的增加一条数据
+     * @return
+     */
     @RequestMapping(value = "/v1/list",method = RequestMethod.POST)
     public String addList(){
         log.info("增加一个列表1");
         return "增加一个列表1";
     }
 
+    /**
+     * 更新列表中的一条数据
+     * @return
+     */
+    @RequestMapping(value = "/v1/list/{name}",method = RequestMethod.PUT)
+    public String updateListOne(@PathVariable("name") String name){
+        log.info("更新列表"+name);
+        return "更新列表"+name;
+    }
+
+    /**
+     * 删除所有列表
+     * @return
+     */
     @RequestMapping(value = "/v1/list",method = RequestMethod.DELETE)
     public String delList(){
         log.info("删除一个列表");

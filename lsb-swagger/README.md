@@ -1,6 +1,6 @@
 ## 地址
 
-原始的：http://localhost:8080/swagger-ui.html http://localhost:8080/  http://localhost:8080/   
+原始的：http://localhost:8080/swagger-ui.html   
 美化的：http://localhost:8080/doc.html
 
 ## 效果图

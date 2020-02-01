@@ -5,6 +5,7 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -52,6 +53,14 @@ public class TestController {
         return "noauto";
     }
 
+    @GetMapping("/logout")
+    public String logout(){
+        log.info("测试退出");
+        Subject subject = SecurityUtils.getSubject();
+        subject.logout();
+        return "logout";
+    }
+
     @PostMapping("/login")
     public String login(String name, String password, Model model){
         log.info("登录");
@@ -59,10 +68,15 @@ public class TestController {
         // 1. 获取 Subject
         Subject subject  = SecurityUtils.getSubject();
 
+        Session session = subject.getSession();
+        log.info("session为:{}", session);
+
         // 2. 封装用户数据
         UsernamePasswordToken token = new UsernamePasswordToken(name, password);
+        log.info("token:{}", token);
         try {
             subject.login(token);
+
 
         } catch (UnknownAccountException e){
             model.addAttribute("msg", "用户名不存在");

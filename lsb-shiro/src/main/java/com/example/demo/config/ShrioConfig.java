@@ -39,7 +39,7 @@ public class ShrioConfig {
         Map<String, String> filterMap = new LinkedHashMap<>();
         filterMap.put("/test", "anon");
         filterMap.put("/login", "anon");
-
+        filterMap.put("/logout", "anon");
         filterMap.put("/add","perms[add]");
         filterMap.put("/update","perms[update]");
         // 拦截所有

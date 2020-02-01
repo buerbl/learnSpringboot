@@ -19,6 +19,8 @@
 
 - [lsb-SpringBoot基础架构篇7（security鉴权）](/lsb-security)
 
+- [lsb-SpringBoot基础架构篇8（shiro）](/lsb-shiro)
+
 
 ## 应用实战篇
 

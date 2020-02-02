@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.Dto.Dto;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
@@ -7,10 +8,15 @@ import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import java.io.Serializable;
+import java.util.function.DoubleToIntFunction;
 
 
 /**
@@ -58,34 +64,48 @@ public class TestController {
         log.info("测试退出");
         Subject subject = SecurityUtils.getSubject();
         subject.logout();
+        if (subject.getSession() == null) {
+            log.info("sesion没有了");
+        }
         return "logout";
     }
 
     @PostMapping("/login")
-    public String login(String name, String password, Model model){
+    public String login( Dto dto, HttpSession session){
         log.info("登录");
-        log.info(name+"+"+password);
+        log.info(dto.getName()+"+"+dto.getPassword());
         // 1. 获取 Subject
         Subject subject  = SecurityUtils.getSubject();
 
-        Session session = subject.getSession();
-        log.info("session为:{}", session);
+        Serializable id = subject.getSession().getId();
+        session.setAttribute("cookie", id);
+
+        log.info("sessionid为:{}", id);
 
         // 2. 封装用户数据
-        UsernamePasswordToken token = new UsernamePasswordToken(name, password);
+        UsernamePasswordToken token = new UsernamePasswordToken(dto.getName(), dto.getPassword());
         log.info("token:{}", token);
         try {
             subject.login(token);
 
 
         } catch (UnknownAccountException e){
-            model.addAttribute("msg", "用户名不存在");
-            return "login";
+//            model.addAttribute("msg", "用户名不存在");
+            log.info("用户名不存在");
+            return "hello";
         }catch (IncorrectCredentialsException e){
-            model.addAttribute("msg", "密码错误");
-            return "login";
+//            model.addAttribute("msg", "密码错误");
+            log.info("密码错误");
+            return "hello";
         }
         return "hello";
+    }
+
+    @PostMapping("/app")
+    public String app(HttpServletRequest request){
+        HttpSession session = request.getSession();
+        log.info("session为:{}", session.getId());
+        return "app";
     }
 }
 

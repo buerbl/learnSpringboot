@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @Slf4j
 @RestController
-public class Demo {
+public class DemoController {
     @RequestMapping("/test")
     public String test(){
         log.info("我是控制层");

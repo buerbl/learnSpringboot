@@ -35,7 +35,9 @@
 
 - [lsb-如何设计一个优雅的RESTFUL的接口](/lsb-restful)
 
-- [lsb-swagger](/lsb-swagger)
+- [lsb-用swagger管理接口](/lsb-swagger)
+
+- [lsb-登录的几种常见方法](/lsb-login)
 
 
 

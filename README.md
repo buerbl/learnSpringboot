@@ -25,6 +25,8 @@
 
 - [lsb-SpringBoot基础架构篇8（shiro）](/lsb-shiro)
 
+- [lsb-SpringBoot之多环境配置](/lsb-profiles)
+
 
 ## 应用实战篇
 

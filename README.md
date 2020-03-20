@@ -1,6 +1,10 @@
 # learnSpringboot
 > 愿天下没有难学的技术
 
+## 部署
+
+![](http://javahouse.xyz/20200320121647.png)
+
 ## 基础架构篇 
 
 - [lsb-第一行代码（SpringBoot）](/lsb-helloworld)

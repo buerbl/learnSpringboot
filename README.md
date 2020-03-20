@@ -3,7 +3,7 @@
 
 ## 部署
 
-![](http://javahouse.xyz/20200320121647.png)
+![](http://javahouse.xyz/20200320122034.png)
 
 ## 基础架构篇 
 

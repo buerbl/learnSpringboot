@@ -1,6 +1,8 @@
 package com.example.validation.controller;
 
-import com.example.validation.dto.Dto;
+import com.example.validation.dto.NotBlankDto;
+import com.example.validation.dto.NotEmptyDto;
+import com.example.validation.dto.NotNullDto;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,9 +15,22 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class ValidationController {
-    @RequestMapping("/test")
-    public String test(@RequestBody @Validated Dto dto){
+
+    @RequestMapping("/NotBlankDto")
+    public String test(@RequestBody @Validated NotBlankDto dto){
         System.out.println("进检验..");
-        return "test";
+        return "NotBlankDto";
+    }
+
+    @RequestMapping("/NotNullDto")
+    public String test(@RequestBody @Validated NotNullDto dto){
+        System.out.println("进检验..");
+        return "NotNullDto";
+    }
+
+    @RequestMapping("/NotEmptyDto")
+    public String test(@RequestBody @Validated NotEmptyDto dto){
+        System.out.println("进检验..");
+        return "NotEmptyDto";
     }
 }

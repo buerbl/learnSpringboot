@@ -1,6 +1,6 @@
-package com.example.lsbaop;
+package com.example.validation;
 
-import com.example.lsbaop.service.Idemo;
+import com.example.validation.service.Idemo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.example.lsbaop.service;
+package com.example.validation.service;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -1,7 +1,7 @@
-package com.example.lsbaop.service.impl;
+package com.example.validation.service.impl;
 
-import com.example.lsbaop.service.Buer;
-import com.example.lsbaop.service.Idemo;
+import com.example.validation.service.Buer;
+import com.example.validation.service.Idemo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

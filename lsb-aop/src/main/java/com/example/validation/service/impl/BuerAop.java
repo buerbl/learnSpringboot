@@ -1,4 +1,4 @@
-package com.example.lsbaop.service.impl;
+package com.example.validation.service.impl;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.annotation.Aspect;
@@ -18,7 +18,7 @@ public class BuerAop {
     // 1 直接扫描注解
     //@Pointcut("@annotation(com.example.springbootaop.service.Buer))")
     // 2 直接扫描注解方法
-    @Pointcut("execution(* com.example.lsbaop.service..*.*(..))")
+    @Pointcut("execution(* com.example.validation.service..*.*(..))")
     public void test(){
 
     }

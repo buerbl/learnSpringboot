@@ -35,6 +35,8 @@
 
 - [lsb-邮件发送](/lsb-email)
 
+- [lsb-入参校验](/lsb-validation)
+
 - [lsb-切面结合注解](/lsb-aop)
 
 - [lsb-拦截器使用](/lsb-interceptor)

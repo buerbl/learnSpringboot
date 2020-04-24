@@ -15,6 +15,6 @@ public class LsbAopApplicationTests {
     private Idemo idemo;
     @Test
     public void contextLoads() {
-        idemo.demo();
+//        idemo.demo("ss");
     }
 }

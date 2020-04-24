@@ -1,5 +1,6 @@
 package com.example.validation.service.impl;
 
+import com.example.validation.Entity;
 import com.example.validation.service.Buer;
 import com.example.validation.service.Idemo;
 import lombok.extern.slf4j.Slf4j;
@@ -15,7 +16,7 @@ import org.springframework.stereotype.Service;
 public class DemoImpl implements Idemo {
     @Override
     @Buer
-    public void demo() {
+    public void demo(Entity entity) {
       log.info("我是Service");
     }
 }

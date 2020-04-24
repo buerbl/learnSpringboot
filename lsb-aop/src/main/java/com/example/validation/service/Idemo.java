@@ -1,5 +1,7 @@
 package com.example.validation.service;
 
+import com.example.validation.Entity;
+
 /**
  * @Description:
  * @Author: boolean
@@ -8,7 +10,8 @@ package com.example.validation.service;
 
 
 public interface Idemo {
-    void demo();
+
+    void demo(Entity entity);
 }
 
 

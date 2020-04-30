@@ -2,7 +2,6 @@ package com.example.lsbdigui.service;
 
 import com.example.lsbdigui.entity.Digui;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.example.lsbdigui.util.Result;
 
 import java.util.List;
 
@@ -26,8 +25,9 @@ public interface IDiguiService extends IService<Digui> {
     /**
      * SQL层按照顺序返回所有的内容
      * @return
+     * @param parent
      */
-    List<Digui> getAllBySQL(int parent);
+    List<Digui> getAllBySQL(Integer parent);
 
 
 }

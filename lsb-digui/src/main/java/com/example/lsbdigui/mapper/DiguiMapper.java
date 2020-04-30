@@ -17,5 +17,5 @@ import java.util.List;
  */
 public interface DiguiMapper extends BaseMapper<Digui> {
 
-    List<Digui> getAllBySQL(@Param("parent")int parent);
+    List<Digui> getAllBySQL(@Param("parent")Integer parent);
 }

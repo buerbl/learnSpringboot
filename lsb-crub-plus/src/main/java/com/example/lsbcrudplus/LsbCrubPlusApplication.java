@@ -13,6 +13,7 @@ public class LsbCrubPlusApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(LsbCrubPlusApplication.class, args);
+
     }
 
     @RequestMapping
@@ -20,5 +21,4 @@ public class LsbCrubPlusApplication {
 
         return "LsbCrubPlus";
     }
-
 }

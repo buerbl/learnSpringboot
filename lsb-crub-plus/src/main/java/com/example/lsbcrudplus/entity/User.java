@@ -1,6 +1,8 @@
 package com.example.lsbcrudplus.entity;
 
 import java.io.Serializable;
+
+import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -33,11 +35,13 @@ public class User implements Serializable {
     /**
      * 年龄
      */
+    @TableField(exist = false)
     private Integer age;
 
     /**
      * 邮箱
      */
+    @TableField(exist = false)
     private String email;
 
 

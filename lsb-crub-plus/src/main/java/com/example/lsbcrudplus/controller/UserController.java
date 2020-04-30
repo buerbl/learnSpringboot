@@ -1,6 +1,8 @@
 package com.example.lsbcrudplus.controller;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.example.lsbcrudplus.entity.User;
 import com.example.lsbcrudplus.service.IUserService;
 import com.example.lsbcrudplus.util.Result;
 import lombok.extern.java.Log;
@@ -26,9 +28,10 @@ public class UserController {
 
     @RequestMapping("/getList")
     public Result getList(){
-        int a = 1/0;
+//        int a = 1/0;
 
-        return Result.getResult(userService.list());
+//        return Result.getResult(userService.getOne(new QueryWrapper<User>().lambda().select(s->s.getColumn()));
+        return null;
     }
 
     @RequestMapping("/saveOne")

@@ -5,13 +5,20 @@
         <result property="id" column="id"/>
         <result property="msg" column="msg"/>
         <result property="parentid" column="parentid"/>
-        <collection property="diguiList" ofType="com.example.lsbdigui.entity.Digui"
+        <collection property="diguiList"
+                    ofType="com.example.lsbdigui.entity.Digui"
                     select="com.example.lsbdigui.mapper.DiguiMapper.getAllBySQL"
                     column="id"/>
     </resultMap>
     <select id="getAllBySQL" resultMap="RecursiveMap">
         select *
         from digui
-        where parentid = #{parent}
+        <if test="parent ==null">
+            where parentid = 0
+        </if>
+        <if test="parent !=null">
+            where parentid = #{parent}
+        </if>
+
     </select>
 </mapper>

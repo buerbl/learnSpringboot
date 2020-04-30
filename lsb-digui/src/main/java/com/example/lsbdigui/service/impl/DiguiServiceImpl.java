@@ -1,16 +1,13 @@
 package com.example.lsbdigui.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.extension.conditions.query.QueryChainWrapper;
 import com.example.lsbdigui.entity.Digui;
 import com.example.lsbdigui.mapper.DiguiMapper;
 import com.example.lsbdigui.service.IDiguiService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.example.lsbdigui.util.Result;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -46,7 +43,7 @@ public class DiguiServiceImpl extends ServiceImpl<DiguiMapper, Digui> implements
 
     //SQL层递归查询
     @Override
-    public List<Digui> getAllBySQL(int parent) {
+    public List<Digui> getAllBySQL(Integer parent) {
         return baseMapper.getAllBySQL(parent);
     }
 }

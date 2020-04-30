@@ -29,7 +29,7 @@ public class DiguiController {
 
     @RequestMapping("/getAllBySQL")
     public Result getAllBySQL(){
-        return Result.getResult(diguiService.getAllBySQL(0));
+        return Result.getResult(diguiService.getAllBySQL(null));
     }
 }
 

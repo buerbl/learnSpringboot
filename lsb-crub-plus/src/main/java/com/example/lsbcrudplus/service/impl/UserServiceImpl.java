@@ -24,8 +24,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     @Override
     public Boolean saveOne() {
         User user = new User();
-        user.setAge(22);
-        user.setEmail("83@qq.com");
+//        user.setAge(22);
+//        user.setEmail("83@qq.com");
         user.setName("chen");
 //        boolean save = super.save(user);
         Boolean save = Boolean.FALSE;

@@ -9,16 +9,16 @@ import org.springframework.stereotype.Component;
  * @Author: boolean
  * @Date: 2020/1/6 21:41
  */
-@Component
-@RabbitListener(queues = "hello")
-public class Receiver {
-
-    @RabbitHandler
-    public void process(String hello) {
-        System.out.println("Receiver : " + hello);
-    }
-
-}
+//@Component
+//@RabbitListener(queues = "hello")
+//public class Receiver {
+//
+//    @RabbitHandler
+//    public void process(String hello) {
+//        System.out.println("Receiver : " + hello);
+//    }
+//
+//}
 
 
 

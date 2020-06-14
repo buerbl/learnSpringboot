@@ -12,8 +12,6 @@ public class Demo2Application {
         e.test();
     }
 
-
-
     @Service(value = "ss")
     class E {
         public void test() {

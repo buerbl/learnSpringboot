@@ -5,6 +5,11 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.crud.entity.User;
 import com.example.crud.service.IUserService;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,6 +30,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/crud/user")
+@Slf4j
 public class UserController {
     @Autowired
     private IUserService userService;
@@ -62,5 +68,30 @@ public class UserController {
         model.addAttribute("page", page);
         return "list";
     }
+
+    public static void main(String[] args) {
+        A a = new A("ss","sss",1);
+        B b = new B();
+        BeanUtils.copyProperties(a, b);
+        System.out.println(b.toString());
+    }
+    @Data
+    @AllArgsConstructor
+    @NoArgsConstructor
+    static  class A{
+        private String name;
+        private String adress;
+        private Integer code;
+    }
+    @Data
+    static class B{
+        private String name2;
+        private String adress2;
+        private Integer code2;
+        private String name1;
+        private String adress1;
+        private Integer code1;
+    }
+
 }
 

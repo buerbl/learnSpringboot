@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://ip/数据库名称
+    url: jdbc:mysql://127.0.0.1/test?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&autoReconnect=true&serverTimezone=Asia/Shanghai&useSSL=false
     username: root
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
@@ -15,4 +15,4 @@ spring:
     mode: HTML5
 logging:
   level:
-    com.example.crud.mapper: trace # 改成你的mapper文件所在包路径
+    com.example.crud.mapper: debug # 改成你的mapper文件所在包路径

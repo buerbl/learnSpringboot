@@ -13,4 +13,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IUserService extends IService<User> {
 	void test();
+
+	void testDoubleIf(Integer code);
 }

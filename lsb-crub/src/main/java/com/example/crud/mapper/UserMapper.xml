@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.crud.mapper.UserMapper">
-
+    <select id="testDoubleIf" resultType="com.example.crud.entity.People">
+        select  *  from people where  1 = 1
+        <if test="code == 1">
+            and 2=2
+            <if test="code != null ">
+                and 3 = 3
+            </if>
+        </if>
+        <if test="code == 2">
+            and 4=4
+        </if>
+        limit 10
+    </select>
 </mapper>

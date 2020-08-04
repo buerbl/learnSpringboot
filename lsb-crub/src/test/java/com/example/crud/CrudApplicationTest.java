@@ -9,14 +9,18 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class CrudApplicationTests {
+public class CrudApplicationTest {
 
     @Autowired
     private IUserService userService;
 
     @Test
-    public void contextLoads() {
-        userService.test();
+    public void testDoubleIf() {
+        userService.testDoubleIf(2);
     }
 
+    @Test
+    public void test(){
+        userService.test();
+    }
 }

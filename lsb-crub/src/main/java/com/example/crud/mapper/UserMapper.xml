@@ -14,4 +14,14 @@
         </if>
         limit 10
     </select>
+
+    <select id="testDoubleIf1" resultType="com.example.crud.entity.People">
+        select  *  from people where  1 = 1
+        <if test="code == 1 and code2 == 2 and code2 != 2 and code != ''">
+        and 2=2
+        limit 10</if>
+        <if test="code == 2">
+            and 3=3
+        </if>
+    </select>
 </mapper>

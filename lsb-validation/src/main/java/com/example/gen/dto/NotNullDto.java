@@ -1,4 +1,4 @@
-package com.example.validation.dto;
+package com.example.gen.dto;
 
 import lombok.Data;
 

@@ -1,6 +1,6 @@
-package com.example.validation.service;
+package com.example.gen.service;
 
-import com.example.validation.Entity;
+import com.example.gen.Entity;
 
 /**
  * @Description:

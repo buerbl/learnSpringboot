@@ -18,4 +18,6 @@ import java.util.Map;
 public interface UserMapper extends BaseMapper<User> {
 	@MapKey("id")
 	Map<Integer, String> testDoubleIf(Integer code);
+
+	Map<Integer,String> testDoubleIf1(Integer code, Integer code2);
 }

@@ -1,4 +1,4 @@
-package com.example.validation;
+package com.example.gen;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

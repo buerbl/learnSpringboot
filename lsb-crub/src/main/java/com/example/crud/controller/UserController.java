@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.crud.entity.User;
 import com.example.crud.service.IUserService;
+import com.google.gson.Gson;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,8 +18,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * <p>
@@ -30,7 +31,6 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/crud/user")
-@Slf4j
 public class UserController {
     @Autowired
     private IUserService userService;
@@ -70,10 +70,27 @@ public class UserController {
     }
 
     public static void main(String[] args) {
-        A a = new A("ss","sss",1);
-        B b = new B();
-        BeanUtils.copyProperties(a, b);
-        System.out.println(b.toString());
+//        A a = new A("ss","sss",1);
+////        B b = new B();
+////        BeanUtils.copyProperties(a, b);
+////        System.out.println(b.toString());
+//        A a1 = new A("ss", "sss", 3);
+//        A a2 = new A("ss2", "sss", 3);
+//        A a3 = new A("ss3", "sss", 4);
+//
+//        List<A> list = new LinkedList();
+//        list.add(a);
+//        list.add(a1);
+//        list.add(a2);
+//        list.add(a3);
+////        list.stream().forEach(System.out::println);
+////        System.out.println(new Gs);
+//        Map<String, List<A>> collect = list.stream().collect(Collectors.groupingBy(A::getName));
+//
+//        System.out.println(new Gson().toJson(collect));
+
+
+        System.out.println(Long.parseLong("171923215912421190"));System.out.println(Long.parseLong("171923215912421190"));
     }
     @Data
     @AllArgsConstructor

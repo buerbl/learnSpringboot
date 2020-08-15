@@ -35,4 +35,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
 	public void testDoubleIf(Integer code) {
 		log.info("结果为[{}]",userMapper.testDoubleIf(code));
 	}
+
+	@Override
+	public void testDoubleIf(Integer code, Integer code2) {
+		log.info("结果为[{}]",userMapper.testDoubleIf1(code, code2));
+	}
 }

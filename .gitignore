@@ -20,3 +20,5 @@ HELP.md
 /*/mvnw
 /*/mvnw.cmd
 /*/.mvn/
+
+*/src/main/resources/rebel.xml

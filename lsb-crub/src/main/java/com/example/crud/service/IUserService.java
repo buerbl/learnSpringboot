@@ -15,4 +15,6 @@ public interface IUserService extends IService<User> {
 	void test();
 
 	void testDoubleIf(Integer code);
+
+	void testDoubleIf(Integer code, Integer code2);
 }

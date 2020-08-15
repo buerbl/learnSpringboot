@@ -34,5 +34,6 @@
         <module>lsb-restful</module>
         <module>lsb-scheduledtask</module>
         <module>lsb-jpalearn</module>
+        <module>lsb-mybatis_generator</module>
     </modules>
 </project>

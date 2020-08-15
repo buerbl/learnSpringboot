@@ -1,10 +1,9 @@
-package com.example.validation.service.impl;
+package com.example.gen.service.impl;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
@@ -20,9 +19,9 @@ import java.util.Arrays;
 @Slf4j
 public class BuerAop {
     // 1 直接扫描注解
-    @Pointcut("@annotation(com.example.validation.service.Buer))")
+    @Pointcut("@annotation(com.example.gen.service.Buer))")
 //     2 直接扫描注解方法
-//    @Pointcut("execution(* com.example.validation.service..*.*(..))")
+//    @Pointcut("execution(* com.example.gen.service..*.*(..))")
     public void test(){
 
     }

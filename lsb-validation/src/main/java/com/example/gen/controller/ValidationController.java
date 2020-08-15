@@ -1,8 +1,8 @@
-package com.example.validation.controller;
+package com.example.gen.controller;
 
-import com.example.validation.dto.NotBlankDto;
-import com.example.validation.dto.NotEmptyDto;
-import com.example.validation.dto.NotNullDto;
+import com.example.gen.dto.NotBlankDto;
+import com.example.gen.dto.NotEmptyDto;
+import com.example.gen.dto.NotNullDto;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

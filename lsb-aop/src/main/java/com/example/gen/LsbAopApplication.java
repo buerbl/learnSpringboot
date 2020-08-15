@@ -1,6 +1,6 @@
-package com.example.validation;
+package com.example.gen;
 
-import com.example.validation.service.Idemo;
+import com.example.gen.service.Idemo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

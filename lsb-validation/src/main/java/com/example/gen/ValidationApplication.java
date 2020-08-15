@@ -1,4 +1,4 @@
-package com.example.validation;
+package com.example.gen;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,7 +14,7 @@ public class ValidationApplication {
     }
     @RequestMapping("/validation")
     public String test(){
-        return "validation";
+        return "gen";
     }
 
 }

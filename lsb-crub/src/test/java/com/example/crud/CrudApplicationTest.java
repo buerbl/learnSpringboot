@@ -20,6 +20,11 @@ public class CrudApplicationTest {
     }
 
     @Test
+    public void testDoubleIfTwo() {
+        userService.testDoubleIf(1, 2);
+    }
+
+    @Test
     public void test(){
         userService.test();
     }

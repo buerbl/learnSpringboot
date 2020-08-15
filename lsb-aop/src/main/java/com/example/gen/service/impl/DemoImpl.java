@@ -1,8 +1,8 @@
-package com.example.validation.service.impl;
+package com.example.gen.service.impl;
 
-import com.example.validation.Entity;
-import com.example.validation.service.Buer;
-import com.example.validation.service.Idemo;
+import com.example.gen.Entity;
+import com.example.gen.service.Buer;
+import com.example.gen.service.Idemo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

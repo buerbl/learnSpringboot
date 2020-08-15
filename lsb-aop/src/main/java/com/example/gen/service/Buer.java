@@ -1,4 +1,4 @@
-package com.example.validation.service;
+package com.example.gen.service;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

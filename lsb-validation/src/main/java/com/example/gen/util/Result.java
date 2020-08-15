@@ -1,4 +1,4 @@
-package com.example.validation.util;
+package com.example.gen.util;
 
 import lombok.Data;
 

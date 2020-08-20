@@ -3,11 +3,11 @@
 <mapper namespace="com.example.crud.mapper.UserMapper">
     <select id="testDoubleIf" resultType="com.example.crud.entity.People">
         select  *  from people where  1 = 1
-        <if test="code == 1">
+        <if test="code == 1 ">
             and 2=2
-            <if test="code != null ">
-                and 3 = 3
-            </if>
+            <!--<if test="code != null ">-->
+                <!--and 3 = 3-->
+            <!--</if>-->
         </if>
         <if test="code == 2">
             and 4=4

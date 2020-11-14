@@ -1,14 +1,7 @@
-HELP.md
 /*/target/
-
-
-
-### IntelliJ IDEA ###
 .idea
 *.iws
 *.iml
-
-### 手动
 /*/mvnw
 /*/mvnw.cmd
 /*/.mvn/

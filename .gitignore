@@ -27,3 +27,11 @@ HELP.md
 */src/main/resources/rebel.xml
 
 
+lsb-jpalearn/src/main/java/
+lsb-jpalearn/src/test/
+lsb-mybatis_generator/src/test/
+lsb-profiles/src/main/resources/static/
+lsb-profiles/src/main/resources/templates/
+lsb-scheduledtask/src/test/
+lsb-validation/src/test/
+src/test/

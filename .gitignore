@@ -2,14 +2,6 @@ HELP.md
 /*/target/
 
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
 
 ### IntelliJ IDEA ###
 .idea
@@ -27,11 +19,7 @@ HELP.md
 */src/main/resources/rebel.xml
 
 
-lsb-jpalearn/src/main/java/
-lsb-jpalearn/src/test/
-lsb-mybatis_generator/src/test/
-lsb-profiles/src/main/resources/static/
-lsb-profiles/src/main/resources/templates/
-lsb-scheduledtask/src/test/
-lsb-validation/src/test/
-src/test/
+*/src/main/resources/static/
+*/src/main/resources/templates/
+*/src/test/
+

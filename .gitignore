@@ -11,15 +11,7 @@ HELP.md
 ### 手动
 /*/mvnw
 /*/mvnw.cmd
-
-
 /*/.mvn/
-
-
 */src/main/resources/rebel.xml
-
-
-*/src/main/resources/static/
-*/src/main/resources/templates/
 */src/test
 

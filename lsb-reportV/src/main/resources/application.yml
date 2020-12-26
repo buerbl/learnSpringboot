@@ -1,0 +1,46 @@
+spring:
+  datasource:
+    dynamic:
+      primary: master
+      datasource:
+        master:
+          driver-class-name: com.mysql.jdbc.Driver
+          url: jdbc:mysql://127.0.0.1/dev1?serverTimezone=GMT%2B8
+          username: root
+          password: 123456
+  #静态资源
+  resource:
+    static-locations: classpath:/static/,classpath:/public/
+  #配置freemarker
+  freemarker:
+    # 设置模板后缀名
+    suffix: .ftl
+    # 设置文档类型
+    content-type: text/html
+    # 设置页面编码格式
+    charset: UTF-8
+    # 设置页面缓存
+    cache: false
+    prefer-file-system-access: false
+    # 设置ftl文件路径
+    template-loader-path:
+      - classpath:/templates
+
+jeecg :
+  #local\minio\alioss
+  uploadType: local
+  path:
+    upload:/opt/upload
+  #阿里云oss
+  oss:
+    endpoint: oss-cn-beijing.aliyuncs.com
+    accessKey: ??
+    secretKey: ??
+    bucketName: jeecgos
+    staticDomain: ??
+  #minio文件
+  minio:
+    minio_url: http://minio.jeecg.com
+    minio_name: ??
+    minio_pass: ??
+    bucketName: otatest

@@ -6,5 +6,5 @@
 /*/mvnw.cmd
 /*/.mvn/
 */src/main/resources/rebel.xml
-*/src/test
+*/src/test/
 

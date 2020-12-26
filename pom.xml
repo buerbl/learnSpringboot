@@ -35,5 +35,6 @@
         <module>lsb-scheduledtask</module>
         <module>lsb-jpalearn</module>
         <module>lsb-mybatis_generator</module>
+        <module>lsb-reportV</module>
     </modules>
 </project>

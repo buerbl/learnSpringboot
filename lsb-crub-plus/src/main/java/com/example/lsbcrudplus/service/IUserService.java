@@ -16,4 +16,6 @@ import org.springframework.stereotype.Service;
 public interface IUserService extends IService<User> {
 
     Boolean saveOne();
+
+    void test1(User user);
 }

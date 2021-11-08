@@ -32,13 +32,11 @@ public class UserController {
 
     @RequestMapping("/getList")
     public Result getList() {
-
         return Result.getResult(userService.list(new QueryWrapper<User>().select().eq("id", 1)));
-//        return null;
     }
 
     @RequestMapping("/saveOne")
-    public Result saveOne() throws Exception {
+    public Result saveOne() {
         return Result.getResult(userService.saveOne());
     }
 
@@ -52,7 +50,6 @@ public class UserController {
             user.setPassword("123");
             user.setAdress("中国");
             user.setStatus(0);
-//            user.setAge(114);
             return userService.save(user);
         }
         return false;

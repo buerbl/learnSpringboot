@@ -34,28 +34,28 @@ public class LsbCrubPlusApplication {
 
     @Autowired
     private IUserService userService;
+
     @RequestMapping
-    public String hello(){
+    public String hello() {
 
         return "LsbCrubPlus";
     }
 
     @GetMapping("/list")
-    public User list(){
+    public User list() {
         log.info("开始查询");
         List<User> userList = userService.list();
-        userList.stream().forEach(System.out::println);
+        userList.forEach(System.out::println);
         System.out.println("============================");
-        userList.stream().forEach(System.out::println);
+        userList.forEach(System.out::println);
         System.out.println("==============================");
-        userList.stream().filter(u-> u.getId()==1).collect(Collectors.toList()).stream().forEach(System.out::println);
+        userList.stream().filter(u -> u.getId() == 1).collect(Collectors.toList()).forEach(System.out::println);
         System.out.println("===============================");
-        userList.stream().map(user -> user.getId()).collect(Collectors.toList()).stream().forEach(System.out::println);
+        userList.stream().map(User::getId).collect(Collectors.toList()).forEach(System.out::println);
         System.out.println("=====================1");
-        Map<Long, String> longStringMap = userList.stream().collect(Collectors.toMap(u -> u.getId(), u -> u.getName()));
+        Map<Long, String> longStringMap = userList.stream().collect(Collectors.toMap(User::getId, User::getName));
 
-        longStringMap.forEach((k,v)-> System.out.println(k+"--"+v));
-
+        longStringMap.forEach((k, v) -> System.out.println(k + "--" + v));
         return null;
     }
 

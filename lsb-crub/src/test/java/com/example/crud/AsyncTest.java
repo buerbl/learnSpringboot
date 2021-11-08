@@ -13,6 +13,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @Author buerbl
@@ -21,6 +22,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 @Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest
+//@Transactional
+
 public class AsyncTest {
 	@Autowired
 	private TestService test;
@@ -66,15 +69,20 @@ public class AsyncTest {
 	public void testJdbc(){
 
 		// add
-//		User user = new User();
-//		user.setUsername("chen1");
-//		user.setAddress("shenzhen1");
-//		userJDBCService.addUser(user);
+		userJDBCService.addUser();
 
 		// get
 
-		String user = userJDBCService.getUser();
-		System.out.println(user);
+//		String user = userJDBCService.getUser();
+//		System.out.println(user);
+
+
+	}
+
+	@Test
+	public void testshiwu(){
+		int a= 0;
+		System.out.println(2 / a);
 	}
 
 }

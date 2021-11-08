@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.crud.entity.User;
 import com.example.crud.service.IUserService;
+import com.example.crud.service.impl.UserJDBCServiceImpl;
 import com.google.gson.Gson;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -29,7 +30,7 @@ import java.util.stream.Collectors;
  * @author jobob
  * @since 2019-12-06
  */
-@Controller
+@RestController
 @RequestMapping("/crud/user")
 public class UserController {
     @Autowired
@@ -68,6 +69,11 @@ public class UserController {
         model.addAttribute("page", page);
         return "list";
     }
+
+    @Autowired
+    private UserJDBCServiceImpl userJDBCService;
+
+
 
     public static void main(String[] args) {
 //        A a = new A("ss","sss",1);

@@ -64,9 +64,17 @@ public class AsyncTest {
 	private UserJDBCServiceImpl userJDBCService;
 	@Test
 	public void testJdbc(){
-		User user = new User();
-		user.setUsername("chen1");
-		user.setAddress("shenzhen1");
-		userJDBCService.addUser(user);
+
+		// add
+//		User user = new User();
+//		user.setUsername("chen1");
+//		user.setAddress("shenzhen1");
+//		userJDBCService.addUser(user);
+
+		// get
+
+		String user = userJDBCService.getUser();
+		System.out.println(user);
 	}
+
 }

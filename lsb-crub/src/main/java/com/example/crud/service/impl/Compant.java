@@ -10,7 +10,7 @@ import java.util.HashMap;
  * @Author 布尔bl
  * @create 2020/11/19 0:07
  */
-@Component
+//@Component
 public class Compant {
     @Autowired
     private HashMap<String, IUserService> hashMap;

@@ -2,6 +2,7 @@ package com.example.crud.service;
 
 import com.example.crud.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.springframework.lang.Nullable;
 
 /**
  * <p>
@@ -16,5 +17,6 @@ public interface IUserService extends IService<User> {
 
 	void testDoubleIf(Integer code);
 
+	@Nullable
 	void testDoubleIf(Integer code, Integer code2);
 }

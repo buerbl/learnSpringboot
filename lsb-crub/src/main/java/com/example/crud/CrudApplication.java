@@ -1,15 +1,25 @@
 package com.example.crud;
 
+import com.example.crud.service.AsyncService;
+import com.example.crud.service.impl.TestService;
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
 @MapperScan("com.example.crud.mapper")
-public class CrudApplication {
+@EnableAsync
+public class CrudApplication  {
+    @Autowired
+    private AsyncService asyncService;
+
+    @Autowired
+    private TestService testService;
 
     public static void main(String[] args) {
         SpringApplication.run(CrudApplication.class, args);
@@ -19,5 +29,17 @@ public class CrudApplication {
     public String test(){
         return "hello,crud";
     }
+
+    @RequestMapping("/aad")
+    public String test1(){
+        try {
+            testService.test();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "success";
+    }
+
+
 
 }

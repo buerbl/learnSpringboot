@@ -24,4 +24,20 @@
             and 3=3
         </if>
     </select>
+
+    <select id="testStringForLong" resultType="com.example.crud.entity.People" parameterType="java.lang.Long">
+        select  *  from people where  1 = 1 and 1 != #{id}
+    </select>
+
+    <insert id="asdas" parameterType="Integer">
+        insert into async (async_id) values (#{id})
+    </insert>
+
+    <insert id="batchInsert" parameterType="java.util.List">
+    insert into async (async_id)
+    VALUES
+    <foreach collection="list" item="item" index="index" separator=",">
+        (#{item})
+    </foreach>
+    </insert>
 </mapper>

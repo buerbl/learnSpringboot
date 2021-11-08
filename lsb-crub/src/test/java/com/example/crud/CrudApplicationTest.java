@@ -1,5 +1,6 @@
 package com.example.crud;
 
+import com.example.crud.mapper.UserMapper;
 import com.example.crud.service.IUserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.util.StopWatch;
+import sun.security.krb5.internal.PAForUserEnc;
+
+import javax.annotation.Resource;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -14,6 +18,10 @@ public class CrudApplicationTest {
 
 	@Autowired
 	private IUserService userService;
+
+
+	@Resource
+	private UserMapper userMapper;
 
 	@Test
 	public void testDoubleIf() {
@@ -48,5 +56,11 @@ public class CrudApplicationTest {
 		sw.stop();
 
 		System.out.println(sw.getTotalTimeMillis());
+	}
+
+
+	@Test
+	public void testStringForLong(){
+		userMapper.testStringForLong(2L);
 	}
 }

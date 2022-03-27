@@ -1,6 +1,24 @@
 spring:
   rabbitmq:
-    host: 47.105.202.146
+    host: ip
     port: 5672
     username: admin
     password: 123456
+server:
+  port:8008
+rocketmq:
+  producer:
+    isOnOff: on
+    groupName: test-rocket
+    namesrvAddr: ip:9876
+    maxMessageSize: 4096
+    sendMsgTimeout: 3000
+    retryTimesWhenSendFailed: 2
+  consumer:
+    isOnOff: on
+    groupName: test-rocket
+    namesrvAddr: ip:9876
+    topics: DemoTopic
+    consumeThreadMin: 20
+    consumeThreadMax: 64
+    consumeMessageBatchMaxSize: 1

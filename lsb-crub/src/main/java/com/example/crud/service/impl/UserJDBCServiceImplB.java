@@ -12,7 +12,7 @@ public class UserJDBCServiceImplB {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    @Transactional(rollbackFor=Exception.class,propagation = Propagation.REQUIRED)
+    @Transactional(rollbackFor=Exception.class,propagation = Propagation.REQUIRES_NEW)
     public int addUser() {
         User user = new User();
         user.setUsername("BB");

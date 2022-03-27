@@ -43,6 +43,9 @@ public class RedisController {
         Gson gson = new Gson();
         String toJson = gson.toJson(list);
         stringRedisTemplate.opsForValue().set("user",toJson);
+        stringRedisTemplate.opsForZSet().add("chen", "12", 1D);
+        stringRedisTemplate.opsForZSet().add("chen", "15", 6D);
+
     }
 
 }

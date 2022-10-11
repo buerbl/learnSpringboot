@@ -22,7 +22,6 @@ public class LsbCrubPlusApplicationTests {
     @Test
     public void contextLoads() {
         User user = new User();
-        user.setId(1L);
         user.setAdress("shenzhen");
         user.setName("chen");
         user.setPassword("123");

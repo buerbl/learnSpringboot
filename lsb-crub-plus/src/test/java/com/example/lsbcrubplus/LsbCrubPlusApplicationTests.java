@@ -10,11 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.List;
 
 @Slf4j
+@RunWith(SpringRunner.class)
 @SpringBootTest(classes = LsbCrubPlusApplication.class)
 public class LsbCrubPlusApplicationTests {
 
@@ -23,18 +21,25 @@ public class LsbCrubPlusApplicationTests {
 
     @Test
     public void contextLoads() {
-        List<User> userList = new ArrayList<>();
         User user = new User();
-        User user1 = new User();
         user.setId(1L);
         user.setAdress("shenzhen");
         user.setName("chen");
         user.setPassword("123");
         user.setStatus(1);
-
-//        userService.updateBatchById()
         boolean save = userService.save(user);
         log.info(String.valueOf(save));
     }
+
+    /**
+     * 测试count查询
+     */
+    @Test
+    public void test(){
+        int count = userService.count();
+        log.info("cout的结果是[{}]",count);
+    }
+
+
 
 }

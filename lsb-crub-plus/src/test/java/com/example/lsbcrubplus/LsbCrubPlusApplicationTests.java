@@ -1,14 +1,13 @@
 package com.example.lsbcrubplus;
 
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.lsbcrudplus.LsbCrubPlusApplication;
 import com.example.lsbcrudplus.entity.User;
 import com.example.lsbcrudplus.service.IUserService;
+import com.google.gson.Gson;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -63,12 +62,42 @@ public class LsbCrubPlusApplicationTests {
 
     /**
      * 分页查询
-     * SELECT id,name,password,adress,status FROM user LIMIT ?,?
+     * SELECT adress,status,id FROM user WHERE (adress = ?) LIMIT ?,?
+     *
+     * 中国(String), 18(Long), 6(Long)
      */
     @Test
     public void testPage(){
+        LambdaQueryWrapper<User> lambdaQuery = Wrappers.lambdaQuery();
+        lambdaQuery.select(User::getAdress, User::getStatus, User::getId)
+                .eq(User::getAdress, "中国");
         IPage<User> page = new Page<>(4, 6);   // 第一个参数表示页树，第二个表示每页多少行
-        IPage<User> page1 = userService.page(page, Wrappers.lambdaQuery());
+        IPage<User> page1 = userService.page(page,lambdaQuery);
         log.info("page的结果是{}", page1);
     }
+
+    @Test
+    /**
+     * 测试不等于
+     */
+    public void testNe(){
+        LambdaQueryWrapper<User> lambdaQuery = Wrappers.lambdaQuery();
+        lambdaQuery.select(User::getId, User::getName, User::getAdress)
+                .ne(User::getId, "1")
+                .last("limit 10");
+        List<User> list = userService.list(lambdaQuery);
+        log.info("结果为{}", list);
+    }
+
+    @Test
+    public void testIn(){
+        LambdaQueryWrapper<User> lambdaQuery = Wrappers.lambdaQuery();
+        lambdaQuery.select(User::getId, User::getName, User::getAdress)
+                .in(User::getId, 1, 3, 4);
+        List<User> list = userService.list(lambdaQuery);
+        log.info("结果为{}", new Gson().toJson(list));
+
+    }
+
+
 }

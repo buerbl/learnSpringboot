@@ -1,7 +1,11 @@
 package com.example.lsbcrudjpa.service;
 
 
-import org.springframework.stereotype.Service;
+import com.example.lsbcrudjpa.entity.User;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
+import java.util.List;
 
 /**
  * <p>
@@ -16,4 +20,12 @@ public interface IUserService  {
     Boolean saveOne();
 
     void test1();
+
+    Long countByName(String name);
+
+    List<User> findByAdressOrderByName(String adress);
+
+    Page<User> queryFirst10ByAdress(String adress, Pageable pageable);
+
+
 }

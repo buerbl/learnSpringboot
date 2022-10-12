@@ -3,6 +3,10 @@ spring:
         url: jdbc:mysql://127.0.0.1/dev?serverTimezone=GMT%2B8
         username: root
         password: 123456
+    jpa:
+        hibernate:
+            ddl-auto: update    # 更新或者创建数据表结构 之前提到过，如果数据库中没做表，Jpa会我们创建 这个配置就是在没有表的时候创建，实体类发生改变的话 会更新表结构
+        show-sql: true  # 配置在日志中打印出执行的 SQL 语句信息
 logging:
     level:
         com.example.lsbcrudplus.mapper.UserMapper: debug # 改成你的mapper文件所在包路径

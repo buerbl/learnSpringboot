@@ -6,11 +6,14 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author jobob
@@ -21,6 +24,8 @@ import java.io.Serializable;
 @Accessors(chain = true)
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
+@Table(name = "user")
 public class User implements Serializable {
 
 
@@ -29,6 +34,7 @@ public class User implements Serializable {
     /**
      * 主键ID
      */
+    @Id
     private Long id;
 
     /**

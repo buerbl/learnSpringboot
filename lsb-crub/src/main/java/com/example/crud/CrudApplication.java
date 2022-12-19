@@ -8,8 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @SpringBootApplication
 @RestController
@@ -32,6 +31,12 @@ public class CrudApplication  {
     public String test(){
         return "hello,crud";
     }
+
+    @PostMapping("/get/{id}")
+    public String getId(@PathVariable(value = "id") String id){
+        return id;
+    }
+
 
     @RequestMapping("/aad")
     public String test1(){

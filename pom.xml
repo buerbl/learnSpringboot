@@ -36,5 +36,6 @@
         <module>lsb-mybatis_generator</module>
         <module>lsb-reportV</module>
         <module>lsb-crub-jpa</module>
+        <module>lsb-webScocketOne</module>
     </modules>
 </project>

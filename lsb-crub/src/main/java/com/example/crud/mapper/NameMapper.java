@@ -2,7 +2,6 @@ package com.example.crud.mapper;
 
 import com.example.crud.entity.Name;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import org.apache.ibatis.annotations.Param;
 
 /**
  * <p>

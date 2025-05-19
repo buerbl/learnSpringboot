@@ -29,7 +29,7 @@ public class LsbCrubPlusApplicationTests {
     @Test
     public void contextLoads() {
         User user = new User();
-        user.setAdress("shenzhen");
+        user.setAddress("shenzhen");
         user.setName("chen");
         user.setPassword("123");
         user.setStatus(1);
@@ -52,10 +52,10 @@ public class LsbCrubPlusApplicationTests {
     @Test
     public void testQuery(){
         LambdaQueryWrapper<User> lambdaQuery = Wrappers.lambdaQuery();
-        lambdaQuery.select(User::getAdress, User::getStatus, User::getId)
+        lambdaQuery.select(User::getAddress, User::getStatus, User::getId)
                 .eq(User::getId, "1")
-                .eq(User::getAdress, "ss")
-                .groupBy(User::getAdress);
+                .eq(User::getAddress, "ss")
+                .groupBy(User::getAddress);
         List<User> list = userService.list(lambdaQuery);
         log.info("list的结果{}", list);
     }
@@ -69,8 +69,8 @@ public class LsbCrubPlusApplicationTests {
     @Test
     public void testPage(){
         LambdaQueryWrapper<User> lambdaQuery = Wrappers.lambdaQuery();
-        lambdaQuery.select(User::getAdress, User::getStatus, User::getId)
-                .eq(User::getAdress, "中国");
+        lambdaQuery.select(User::getAddress, User::getStatus, User::getId)
+                .eq(User::getAddress, "中国");
         IPage<User> page = new Page<>(4, 6);   // 第一个参数表示页树，第二个表示每页多少行
         IPage<User> page1 = userService.page(page,lambdaQuery);
         log.info("page的结果是{}", page1);
@@ -82,7 +82,7 @@ public class LsbCrubPlusApplicationTests {
      */
     public void testNe(){
         LambdaQueryWrapper<User> lambdaQuery = Wrappers.lambdaQuery();
-        lambdaQuery.select(User::getId, User::getName, User::getAdress)
+        lambdaQuery.select(User::getId, User::getName, User::getAddress)
                 .ne(User::getId, "1")
                 .last("limit 10");
         List<User> list = userService.list(lambdaQuery);
@@ -92,7 +92,7 @@ public class LsbCrubPlusApplicationTests {
     @Test
     public void testIn(){
         LambdaQueryWrapper<User> lambdaQuery = Wrappers.lambdaQuery();
-        lambdaQuery.select(User::getId, User::getName, User::getAdress)
+        lambdaQuery.select(User::getId, User::getName, User::getAddress)
                 .in(User::getId, 1, 3, 4);
         List<User> list = userService.list(lambdaQuery);
         log.info("结果为{}", new Gson().toJson(list));

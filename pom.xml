@@ -36,5 +36,7 @@
         <module>lsb-mybatis_generator</module>
         <module>lsb-crub-jpa</module>
         <module>lsb-webScocketOne</module>
+        <module>lsb-springboot-learn/main</module>
+        <module>lsb-springboot-learn/common</module>
     </modules>
 </project>

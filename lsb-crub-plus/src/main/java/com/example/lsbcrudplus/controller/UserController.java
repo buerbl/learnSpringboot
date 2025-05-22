@@ -48,7 +48,7 @@ public class UserController {
             User user = new User();
             user.setName(name);
             user.setPassword("123");
-            user.setAdress("中国");
+            user.setAddress("中国");
             user.setStatus(0);
             return userService.save(user);
         }

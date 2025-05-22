@@ -1,21 +1,35 @@
 package com.example.crud.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import java.io.Serializable;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
 
 /**
- * @Author buerbl
- * @create 2020/8/4 19:06
+ * <p>
+ * 
+ * </p>
+ *
+ * @author jobob
+ * @since 2025-05-19
  */
 @Data
-public class People {
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
+public class People implements Serializable {
 
-	private Integer id;
+    private static final long serialVersionUID=1L;
 
-	private String name;
+    @TableId(value = "id", type = IdType.AUTO)
+    private Integer id;
 
+    private String name;
 
-	private String sex;
+    private String sex;
 
-	private String adress;
+    private String adress;
+
 
 }

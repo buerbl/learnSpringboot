@@ -1,14 +1,15 @@
 package com.example.crud;
 
 import com.example.crud.mapper.UserMapper;
+import com.example.crud.service.INameService;
 import com.example.crud.service.IUserService;
+import com.example.crud.service.impl.NameServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.util.StopWatch;
-import sun.security.krb5.internal.PAForUserEnc;
 
 import javax.annotation.Resource;
 
@@ -22,6 +23,9 @@ public class CrudApplicationTest {
 
 	@Resource
 	private UserMapper userMapper;
+
+	@Resource
+	private INameService nameService;
 
 	@Test
 	public void testDoubleIf() {
@@ -62,5 +66,16 @@ public class CrudApplicationTest {
 	@Test
 	public void testStringForLong(){
 		userMapper.testStringForLong(2L);
+	}
+
+
+	@Test
+	public void testTransaction(){
+		userMapper.testDoubleIf1(2, 3);
+	}
+
+	@Test
+	public void testInsert(){
+		nameService.AddName();
 	}
 }

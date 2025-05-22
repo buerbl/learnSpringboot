@@ -46,7 +46,7 @@ public class User implements Serializable {
      * 邮箱
      */
 //    @TableField(exist = false)
-    private String adress;
+    private String address;
 
     private Integer status;
 
